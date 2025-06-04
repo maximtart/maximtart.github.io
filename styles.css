@@ -220,6 +220,29 @@ nav ul li a:hover {
     background: #0056b3;
 }
 
+.contact-success {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    text-align: center;
+    display: none;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
 /* Footer */
 footer {
     background: #333;

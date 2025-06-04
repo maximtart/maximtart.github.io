@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Contact form handling
     const contactForm = document.getElementById('contact-form');
+    const contactSuccess = document.getElementById('contact-success');
     if (contactForm) {
         contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
@@ -27,9 +28,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 message: document.getElementById('message').value
             };
 
-            // Here you would typically send the form data to your server
-            // For now, we'll just show a success message
-            alert('Thank you for your message! We will get back to you soon.');
+            // Show success message
+            if (contactSuccess) {
+                contactSuccess.style.display = 'block';
+                contactSuccess.textContent = 'Message successfully sent!';
+                setTimeout(() => {
+                    contactSuccess.style.display = 'none';
+                }, 4000);
+            }
             contactForm.reset();
         });
     }
