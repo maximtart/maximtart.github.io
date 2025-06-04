@@ -1,1 +1,104 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Apps - iOS & macOS Applications</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <header class="hero">
+        <nav>
+            <div class="logo">Your Brand</div>
+            <ul>
+                <li><a href="#apps">Apps</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="hero-content">
+            <h1>Beautiful Apps for iOS & macOS</h1>
+            <p>Discover our collection of thoughtfully designed applications</p>
+        </div>
+    </header>
+
+    <section id="apps" class="apps-section">
+        <h2>Our Applications</h2>
+        <div class="apps-grid">
+            <div class="app-card">
+                <div class="app-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3>iOS App Name</h3>
+                <p>Description of your iOS application and its key features.</p>
+                <a href="#" class="app-store-button">
+                    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                        alt="Download on the App Store">
+                </a>
+            </div>
+            <div class="app-card">
+                <div class="app-icon">
+                    <i class="fas fa-laptop"></i>
+                </div>
+                <h3>macOS App Name</h3>
+                <p>Description of your macOS application and its key features.</p>
+                <a href="#" class="app-store-button">
+                    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-mac-app-store.svg"
+                        alt="Download on the Mac App Store">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <div class="contact-container">
+            <form id="contact-form" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About Us</h4>
+                <p>We create beautiful and functional applications for Apple platforms.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#apps">Apps</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Your Brand. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
