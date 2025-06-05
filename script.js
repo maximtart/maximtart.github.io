@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', function () {
         contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
 
-            // Get form data
             const formData = {
                 name: document.getElementById('name').value,
                 email: document.getElementById('email').value,
@@ -28,15 +27,31 @@ document.addEventListener('DOMContentLoaded', function () {
                 message: document.getElementById('message').value
             };
 
-            // Show success message
-            if (contactSuccess) {
-                contactSuccess.style.display = 'block';
-                contactSuccess.textContent = 'Message successfully sent!';
-                setTimeout(() => {
-                    contactSuccess.style.display = 'none';
-                }, 4000);
-            }
-            contactForm.reset();
+            // Send data to Google Apps Script endpoint
+            fetch('https://script.google.com/macros/s/AKfycbwB5dUxRfg8L0BlFmBV1wwQZoNHCh8ERWRSKUUI5AT3D-Frtyru3LtLkldFLdmfsRSO/exec', {
+                method: 'POST',
+                body: JSON.stringify(formData),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (contactSuccess) {
+                        contactSuccess.style.display = 'block';
+                        contactSuccess.textContent = 'Message successfully sent!';
+                        setTimeout(() => {
+                            contactSuccess.style.display = 'none';
+                        }, 4000);
+                    }
+                    contactForm.reset();
+                })
+                .catch(error => {
+                    if (contactSuccess) {
+                        contactSuccess.style.display = 'block';
+                        contactSuccess.textContent = 'There was an error sending your message.';
+                    }
+                });
         });
     }
 
